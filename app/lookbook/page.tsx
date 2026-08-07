@@ -18,7 +18,7 @@ const galleryLayouts = [
 
 export default function LookbookPage() {
   return (
-    <main className="min-h-screen bg-white px-6 pb-24 pt-28 md:px-10 lg:px-16">
+    <main className="min-h-screen severli-page-bg px-6 pb-24 pt-28 md:px-10 lg:px-16">
       <div className="mx-auto max-w-[1400px]">
         {/* Kembali ke Home */}
         <Link
@@ -32,19 +32,22 @@ export default function LookbookPage() {
         </Link>
 
         {/* Header */}
-        <header className="mb-14 flex flex-col justify-between gap-7
-                           border-b border-black/10 pb-10
-                           md:flex-row md:items-end"
+        <header
+          className="mb-14 flex flex-col justify-between gap-7
+                     border-b border-black/10 pb-10
+                     md:flex-row md:items-end"
         >
           <div className="max-w-[720px]">
-            <p className="mb-3 text-[10px] font-semibold uppercase
-                          tracking-[0.3em] text-black/45"
+            <p
+              className="mb-3 text-[10px] font-semibold uppercase
+                         tracking-[0.3em] text-black/45"
             >
               Severli.co Editorial
             </p>
 
-            <h1 className="font-serif text-4xl font-semibold leading-tight
-                           text-black md:text-5xl"
+            <h1
+              className="font-serif text-4xl font-semibold leading-tight
+                         text-black md:text-5xl"
             >
               The Lookbook
             </h1>
@@ -66,7 +69,9 @@ export default function LookbookPage() {
             <figure
               key={image.id}
               className={`group relative h-[460px] overflow-hidden bg-[#efefed]
-                          md:h-auto ${galleryLayouts[index]}`}
+                          md:h-auto ${
+                            galleryLayouts[index % galleryLayouts.length]
+                          }`}
             >
               <Image
                 src={image.src}
@@ -80,17 +85,20 @@ export default function LookbookPage() {
                            ease-out group-hover:scale-[1.025]"
               />
 
-              <div className="absolute inset-0 bg-black/0 transition-colors
-                              duration-500 group-hover:bg-black/[0.08]"
+              <div
+                className="absolute inset-0 bg-black/0 transition-colors
+                           duration-500 group-hover:bg-black/[0.08]"
               />
 
-              <figcaption className="absolute bottom-4 left-4 text-[9px]
-                                     font-medium uppercase tracking-[0.22em]
-                                     text-white opacity-0 drop-shadow-md
-                                     transition-opacity duration-500
-                                     group-hover:opacity-100"
+              <figcaption
+                className="absolute bottom-4 left-4 text-[9px]
+                           font-medium uppercase tracking-[0.22em]
+                           text-white opacity-0 drop-shadow-md
+                           transition-opacity duration-500
+                           group-hover:opacity-100"
               >
-                Severli.co / Look {String(index + 1).padStart(2, "0")}
+                Severli.co / Look{" "}
+                {String(index + 1).padStart(2, "0")}
               </figcaption>
             </figure>
           ))}

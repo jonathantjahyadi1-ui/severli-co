@@ -35,30 +35,40 @@ const strengths = [
 
 export default function Strengths() {
   return (
-    <section id="strengths" className="px-16 py-20">
-      <p className="section-label">OUR STRENGTHS</p>
-      <h2 className="section-heading">What Makes Us Different</h2>
-      <p className="section-para mb-12">
-        Every piece is designed with intention, blending Korean-inspired
-        silhouettes with practical everyday wearability.
-      </p>
+    <section className="min-h-screen severli-page-bg px-8 py-20 md:px-12 lg:px-16">
+      <div className="mx-auto max-w-6xl">
+        <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.3em] text-brand-mid-gray">
+          Our Strengths
+        </p>
 
-      <div className="grid grid-cols-3 gap-8">
-        {strengths.map((s) => (
-          <div key={s.title} className="flex gap-4 items-start">
-            <div className="w-12 h-12 rounded-full bg-brand-off-white flex items-center justify-center flex-shrink-0">
-              <s.icon size={20} className="opacity-50" />
+        <h2 className="mb-6 font-serif text-4xl font-semibold text-brand-black md:text-5xl">
+          What Makes Us Different
+        </h2>
+
+        <p className="mb-16 max-w-2xl text-[15px] leading-7 text-brand-mid-gray">
+          Every piece is designed with intention, blending Korean-inspired
+          silhouettes with practical everyday wearability.
+        </p>
+
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
+          {strengths.map((s) => (
+            <div key={s.title} className="flex items-start gap-4">
+              <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-brand-off-white">
+                <s.icon size={20} className="opacity-50" />
+              </div>
+
+              <div>
+                <h4 className="mb-1.5 text-[15px] font-semibold text-brand-black">
+                  {s.title}
+                </h4>
+
+                <p className="text-[13px] leading-relaxed text-brand-mid-gray">
+                  {s.desc}
+                </p>
+              </div>
             </div>
-            <div>
-              <h4 className="text-[15px] font-semibold text-brand-black mb-1.5">
-                {s.title}
-              </h4>
-              <p className="text-[13px] text-brand-mid-gray leading-relaxed">
-                {s.desc}
-              </p>
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );

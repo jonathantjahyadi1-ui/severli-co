@@ -5,9 +5,9 @@ import HeroSlider from "./HeroSlider";
 export default function Hero() {
   return (
     <section
-      id="home"
-      className="relative flex min-h-[600px] items-center overflow-hidden bg-brand-white"
-    >
+  id="home"
+  className="relative flex min-h-[600px] items-center overflow-hidden severli-page-bg"
+>
       {/* Text Content */}
       <div className="z-10 flex-1 py-20 pl-16">
         <p className="mb-2 font-serif text-sm italic text-brand-gray">

@@ -63,7 +63,7 @@ export default function HeroSlider() {
       ))}
 
       {/* Gradasi agar foto menyatu dengan bagian teks */}
-      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 hidden w-32 bg-gradient-to-r from-brand-white via-brand-white/60 to-transparent lg:block" />
+      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 hidden w-40 bg-gradient-to-r from-[#eae8e9] via-[#f3f1f2]/70 to-transparent lg:block" />
 
       {/* Bayangan tipis di bawah */}
       <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-black/20 via-transparent to-transparent" />

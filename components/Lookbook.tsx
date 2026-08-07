@@ -75,21 +75,21 @@ export default function Lookbook() {
   return (
     <section
       id="lookbook"
-      className="bg-white px-6 py-20 md:px-10 lg:px-16"
+      className="severli-page-bg px-6 py-24 md:px-10 lg:px-16"
     >
       <div className="mx-auto max-w-[1400px]">
         {/* Header */}
-        <div className="mb-10 flex flex-col justify-between gap-6 md:flex-row md:items-end">
+        <div className="mb-12 flex flex-col justify-between gap-7 md:flex-row md:items-end">
           <div className="max-w-[650px]">
-            <p className="section-label">LOOKBOOK</p>
+            <p className="mb-3 text-[10px] font-semibold uppercase tracking-[0.3em] text-black/45">
+              Lookbook
+            </p>
 
-            <h2 className="section-heading mb-3">
-              Style Inspiration
-            </h2>
+            <h2 className="section-heading mb-3">Style Inspiration</h2>
 
             <p className="section-para">
-              Discover how Severli.co pieces are styled for work, campus,
-              and every occasion in between.
+              Discover how Severli.co pieces are styled for work, campus, and
+              every occasion in between.
             </p>
           </div>
 
@@ -110,7 +110,7 @@ export default function Lookbook() {
             <Link
               key={image.id}
               href="/lookbook"
-              aria-label="Buka seluruh Lookbook Severli.co"
+              aria-label={`Buka Lookbook Severli.co ${index + 1}`}
               className={`group relative block h-[430px] overflow-hidden
                           bg-[#efefed] ${homeLayouts[index]}`}
             >
@@ -130,11 +130,12 @@ export default function Lookbook() {
 
               <div className="absolute inset-0 bg-black/0 transition-colors duration-500 group-hover:bg-black/10" />
 
-              <div className="absolute bottom-0 left-0 right-0 translate-y-3
-                              bg-gradient-to-t from-black/45 to-transparent
-                              px-5 pb-5 pt-16 opacity-0 transition-all
-                              duration-500 group-hover:translate-y-0
-                              group-hover:opacity-100"
+              <div
+                className="absolute inset-x-0 bottom-0 translate-y-3
+                           bg-gradient-to-t from-black/45 to-transparent
+                           px-5 pb-5 pt-16 opacity-0 transition-all
+                           duration-500 group-hover:translate-y-0
+                           group-hover:opacity-100"
               >
                 <span className="text-[10px] font-medium uppercase tracking-[0.2em] text-white">
                   View Lookbook

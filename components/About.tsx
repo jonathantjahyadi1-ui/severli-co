@@ -1,22 +1,25 @@
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 export default function About() {
   return (
-    <section id="about" className="bg-white px-6 py-20 md:px-10 lg:px-16">
-      <div className="mx-auto flex max-w-[1200px] flex-col items-center gap-12 lg:flex-row lg:gap-16">
+    <section
+      id="about"
+      className="severli-page-bg px-6 py-20 md:px-10 lg:px-16"
+    >
+      <div className="mx-auto flex max-w-[1400px] flex-col items-center gap-12 md:flex-row md:gap-16">
         {/* Logo Severli.co */}
-        <div className="flex h-[340px] w-full max-w-[420px] flex-shrink-0 items-center justify-center bg-transparent lg:h-[420px] lg:w-[360px]">
-  <Image
-    src="/images/logo/severli-logo-black.webp"
-    alt="Logo Severli.co"
-    width={320}
-    height={180}
-    sizes="(max-width: 1024px) 70vw, 320px"
-    className="h-auto w-[260px] object-contain mix-blend-multiply md:w-[300px]"
-  />
-</div>
+        <div className="flex flex-1 items-center justify-center">
+          <Image
+            src="/images/logo/severli-logo-black.webp"
+            alt="Logo Severli.co"
+            width={420}
+            height={180}
+            sizes="(max-width: 768px) 70vw, 35vw"
+            className="h-auto w-full max-w-[360px] object-contain"
+          />
+        </div>
 
         {/* About Content */}
         <div className="flex-1">
