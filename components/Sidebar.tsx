@@ -63,7 +63,7 @@ export default function Sidebar() {
             onClick={() => setIsOpen(false)}
             className="font-serif text-2xl font-semibold tracking-wide text-black"
           >
-            severli.co
+            Severli.co
           </Link>
 
           <button
