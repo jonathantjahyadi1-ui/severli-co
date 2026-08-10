@@ -115,18 +115,18 @@ export default function Lookbook() {
                           bg-[#efefed] ${homeLayouts[index]}`}
             >
               <Image
-                src={image.src}
-                alt={image.alt}
-                fill
-                priority={index < 2}
-                sizes={
-                  index < 2
-                    ? "(max-width: 768px) 100vw, 60vw"
-                    : "(max-width: 768px) 100vw, 33vw"
-                }
-                className="object-cover transition-transform duration-700
-                           ease-out group-hover:scale-[1.025]"
-              />
+  src={image.src}
+  alt={image.alt}
+  fill
+  quality={70}
+  sizes={
+    index < 2
+      ? "(max-width: 768px) 100vw, 55vw"
+      : "(max-width: 768px) 100vw, 33vw"
+  }
+  className="object-cover transition-transform duration-700
+             ease-out group-hover:scale-[1.025]"
+/>
 
               <div className="absolute inset-0 bg-black/0 transition-colors duration-500 group-hover:bg-black/10" />
 

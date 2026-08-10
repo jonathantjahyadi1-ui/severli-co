@@ -10,7 +10,7 @@ export default function Hero() {
 >
       {/* Text Content */}
       <div className="z-10 flex-1 py-20 pl-16">
-        <p className="mb-2 font-serif text-sm italic text-brand-gray">
+        <p className="mb-2 text-sm italic text-brand-gray">
           Severli.co
         </p>
 

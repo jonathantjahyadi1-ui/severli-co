@@ -9,7 +9,6 @@ const quickLinks = [
 ];
 
 const companyLinks = [
-  { label: "Our Team", href: "/team" },
   { label: "Lookbook", href: "/lookbook" },
   { label: "Contact", href: "/contact" },
 ];

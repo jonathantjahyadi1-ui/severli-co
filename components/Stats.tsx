@@ -1,7 +1,7 @@
 import { Users, Star, ShoppingBag, Briefcase, Clock, Camera } from "lucide-react";
 
 const stats = [
-  { icon: Users, value: "91K+", label: "Followers" },
+  { icon: Users, value: "40K+", label: "Instagram Followers" },
   { icon: Star, value: "4.9", label: "Store Rating" },
   { icon: ShoppingBag, value: "10K+", label: "Best Seller Sold" },
   { icon: Briefcase, value: "Officewear", label: "& Daily Fashion" },

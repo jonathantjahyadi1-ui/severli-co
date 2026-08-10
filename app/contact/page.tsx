@@ -51,14 +51,21 @@ export default function ContactPage() {
             </div>
           </a>
 
-          <div className="flex items-center gap-4 border border-black/10 bg-white/35 p-6">
-            <MapPin size={22} />
+          <a
+  href="https://maps.app.goo.gl/gFYXNh6BXvCh27Di7"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Buka lokasi Severli.co di Google Maps"
+  className="flex items-center gap-4 border border-black/10 bg-white/35 p-6
+             transition-colors duration-300 hover:border-black"
+>
+  <MapPin size={22} />
 
-            <div>
-              <p className="text-sm text-gray-500">Lokasi</p>
-              <p className="font-medium text-black">Jakarta, Indonesia</p>
-            </div>
-          </div>
+  <div>
+    <p className="text-sm text-gray-500">Lokasi</p>
+    <p className="font-medium text-black">Jakarta, Indonesia</p>
+  </div>
+</a>
 
           <a
             href="mailto:info@severli.co?subject=Customer%20Service%20Severli.co"

@@ -78,7 +78,7 @@ export default function Collections() {
           >
             <div className="flex h-[240px] items-center justify-center bg-[#efefed]">
               <span
-                className="inline-flex items-center gap-2 font-serif text-sm
+                className="inline-flex items-center gap-2 text-sm
                            italic text-brand-light-gray transition-all
                            duration-200 group-hover:gap-3
                            group-hover:text-brand-black"
