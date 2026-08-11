@@ -68,17 +68,19 @@ export default function ContactPage() {
 </a>
 
           <a
-            href="mailto:info@severli.co?subject=Customer%20Service%20Severli.co"
-            className="flex items-center gap-4 border border-black/10 bg-white/35 p-6
-                       transition-colors duration-300 hover:border-black"
-          >
-            <MessageCircle size={22} />
+  href="https://wa.me/6285223338008?text=Halo%20Severli.co%2C%20saya%20ingin%20bertanya%20mengenai%20produk."
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Hubungi Customer Service Severli.co melalui WhatsApp"
+  className="flex items-center gap-4 border border-black/10 bg-white/35 p-6 transition-colors duration-300 hover:border-black"
+>
+  <MessageCircle size={22} />
 
-            <div>
-              <p className="text-sm text-gray-500">Customer Service</p>
-              <p className="font-medium text-black">Hubungi Severli.co</p>
-            </div>
-          </a>
+  <div>
+    <p className="text-sm text-gray-500">Customer Service</p>
+    <p className="font-medium text-black">Chat melalui WhatsApp</p>
+  </div>
+</a>
         </section>
       </div>
     </main>

@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
-import Sidebar from "@/components/Sidebar";
-import Footer from "@/components/Footer";
+import AppShell from "@/components/AppShell";
 
 const belleza = localFont({
   src: "./fonts/Belleza-Regular.ttf",
@@ -32,15 +31,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="id">
-      <body className={`${belleza.variable} ${manrope.variable}`}>
-        <div className="min-h-screen bg-white">
-          <Sidebar />
-
-          <main className="min-h-screen lg:ml-64">
-            {children}
-            <Footer />
-          </main>
-        </div>
+      <body
+        className={`${belleza.variable} ${manrope.variable} overflow-x-hidden`}
+      >
+        <AppShell>{children}</AppShell>
       </body>
     </html>
   );

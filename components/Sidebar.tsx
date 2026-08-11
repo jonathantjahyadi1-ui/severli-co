@@ -14,7 +14,7 @@ import {
   TrendingUp,
   X,
 } from "lucide-react";
-import { useState } from "react";
+import { useEffect } from "react";
 
 const navItems = [
   { href: "/", label: "Home", icon: Home },
@@ -26,66 +26,94 @@ const navItems = [
   { href: "/contact", label: "Contact", icon: Mail },
 ];
 
-export default function Sidebar() {
+type SidebarProps = {
+  isOpen: boolean;
+  onOpen: () => void;
+  onClose: () => void;
+};
+
+export default function Sidebar({
+  isOpen,
+  onOpen,
+  onClose,
+}: SidebarProps) {
   const pathname = usePathname();
-  const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        onClose();
+      }
+    };
+
+    window.addEventListener("keydown", handleEscape);
+
+    return () => {
+      window.removeEventListener("keydown", handleEscape);
+    };
+  }, [isOpen, onClose]);
 
   return (
     <>
-      {/* Tombol menu untuk layar HP */}
+      {/* Tombol membuka sidebar */}
       {!isOpen && (
         <button
           type="button"
-          onClick={() => setIsOpen(true)}
-          className="fixed left-4 top-4 z-50 rounded-md bg-black p-3 text-white lg:hidden"
+          onClick={onOpen}
+          className="fixed left-5 top-5 z-50 flex h-11 w-11 items-center justify-center rounded-full bg-black text-white shadow-lg transition duration-200 hover:scale-105 hover:bg-gray-800"
           aria-label="Buka menu"
         >
-          <Menu size={22} />
+          <Menu size={21} />
         </button>
       )}
 
-      {/* Latar belakang saat menu HP terbuka */}
-      {isOpen && (
-        <button
-          type="button"
-          onClick={() => setIsOpen(false)}
-          className="fixed inset-0 z-30 bg-black/40 lg:hidden"
-          aria-label="Tutup menu"
-        />
-      )}
+      {/* Latar gelap hanya untuk HP/tablet */}
+      <button
+        type="button"
+        onClick={onClose}
+        aria-label="Tutup menu"
+        tabIndex={isOpen ? 0 : -1}
+        className={`fixed inset-0 z-30 bg-black/40 backdrop-blur-[1px] transition-opacity duration-300 lg:hidden ${
+          isOpen
+            ? "pointer-events-auto opacity-100"
+            : "pointer-events-none opacity-0"
+        }`}
+      />
 
+      {/* Sidebar */}
       <aside
-        className={`fixed left-0 top-0 z-40 flex h-screen w-64 flex-col
-          border-r border-gray-200 bg-white px-5 py-8
-          transition-transform duration-300 ${
-            isOpen ? "translate-x-0" : "-translate-x-full"
-          } lg:translate-x-0`}
+        className={`fixed left-0 top-0 z-40 flex h-screen w-64 flex-col overflow-y-auto border-r border-gray-200 bg-white px-5 py-8 shadow-xl transition-transform duration-300 ease-in-out ${
+          isOpen ? "translate-x-0" : "-translate-x-full"
+        }`}
       >
-        {/* Logo Severli.co */}
+        {/* Logo */}
         <div className="relative mb-10 flex h-[70px] items-center justify-center">
           <Link
             href="/"
-            onClick={() => setIsOpen(false)}
+            onClick={onClose}
             aria-label="Kembali ke halaman utama Severli.co"
-            className="relative block h-[70px] w-[200px]"
+            className="relative block h-[70px] w-[180px]"
           >
             <Image
               src="/images/logo/severli-logo-black.webp"
               alt="Logo Severli.co"
               fill
               priority
-              sizes="200px"
+              sizes="180px"
               className="scale-[1.2] object-contain object-center"
             />
           </Link>
 
+          {/* Tombol menutup sidebar */}
           <button
             type="button"
-            onClick={() => setIsOpen(false)}
-            className="absolute right-0 top-1/2 -translate-y-1/2 text-gray-600 lg:hidden"
+            onClick={onClose}
+            className="absolute -right-1 -top-3 flex h-9 w-9 items-center justify-center rounded-full text-gray-500 transition-colors hover:bg-gray-100 hover:text-black"
             aria-label="Tutup menu"
           >
-            <X size={22} />
+            <X size={21} />
           </button>
         </div>
 
@@ -93,21 +121,23 @@ export default function Sidebar() {
         <nav className="space-y-1.5">
           {navItems.map((item) => {
             const Icon = item.icon;
-            const isActive = pathname === item.href;
+
+            const isActive =
+              item.href === "/"
+                ? pathname === "/"
+                : pathname.startsWith(item.href);
 
             return (
               <Link
                 key={item.href}
                 href={item.href}
-                onClick={() => setIsOpen(false)}
+                onClick={onClose}
                 aria-current={isActive ? "page" : undefined}
-                className={`flex items-center gap-3 rounded-lg px-3.5 py-2.5
-                  text-[13px] font-medium tracking-wide
-                  transition-all duration-200 ${
-                    isActive
-                      ? "bg-gray-100 text-black"
-                      : "text-gray-500 hover:bg-gray-100 hover:text-black"
-                  }`}
+                className={`flex items-center gap-3 rounded-lg px-3.5 py-2.5 text-[13px] font-medium tracking-wide transition-all duration-200 ${
+                  isActive
+                    ? "bg-gray-100 text-black"
+                    : "text-gray-500 hover:bg-gray-100 hover:text-black"
+                }`}
               >
                 <Icon size={16} className="shrink-0 opacity-60" />
                 <span>{item.label}</span>
