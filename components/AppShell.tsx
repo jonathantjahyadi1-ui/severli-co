@@ -22,7 +22,7 @@ export default function AppShell({ children }: AppShellProps) {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen w-full max-w-full overflow-x-hidden bg-white">
       <Sidebar
         isOpen={isSidebarOpen}
         onOpen={openSidebar}
@@ -30,8 +30,10 @@ export default function AppShell({ children }: AppShellProps) {
       />
 
       <main
-        className={`min-h-screen transition-[margin-left] duration-300 ease-in-out ${
-          isSidebarOpen ? "lg:ml-64" : "lg:ml-0"
+        className={`min-h-screen min-w-0 overflow-x-hidden transition-[margin-left,width] duration-300 ease-in-out ${
+          isSidebarOpen
+            ? "w-full lg:ml-64 lg:w-[calc(100%-16rem)]"
+            : "ml-0 w-full lg:ml-0 lg:w-full"
         }`}
       >
         {children}
