@@ -40,7 +40,7 @@ export default function HeroSlider() {
   }, []);
 
   return (
-    <div className="relative h-full min-h-[600px] w-full overflow-hidden bg-brand-lighter-gray">
+    <div className="relative h-full w-full overflow-hidden bg-brand-lighter-gray">
       {heroImages.map((image, index) => (
         <div
           key={image.src}
@@ -55,27 +55,28 @@ export default function HeroSlider() {
             alt={image.alt}
             fill
             priority={index === 0}
-            sizes="(max-width: 1024px) 100vw, 50vw"
+            sizes="(max-width: 1023px) 100vw, 50vw"
             className="object-cover"
             style={{ objectPosition: image.position }}
           />
         </div>
       ))}
 
-      {/* Gradasi agar foto menyatu dengan bagian teks */}
+      {/* Gradasi hanya pada tampilan laptop */}
       <div className="pointer-events-none absolute inset-y-0 left-0 z-10 hidden w-40 bg-gradient-to-r from-[#eae8e9] via-[#f3f1f2]/70 to-transparent lg:block" />
 
-      {/* Bayangan tipis di bawah */}
+      {/* Bayangan tipis di bawah gambar */}
       <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
 
-      {/* Indikator slider minimalis */}
-      <div className="absolute bottom-6 left-1/2 z-20 flex -translate-x-1/2 gap-2">
+      {/* Indikator slider */}
+      <div className="absolute bottom-5 left-1/2 z-20 flex -translate-x-1/2 gap-2 sm:bottom-6">
         {heroImages.map((image, index) => (
           <button
             key={image.src}
             type="button"
             onClick={() => setCurrentSlide(index)}
             aria-label={`Tampilkan foto ${index + 1}`}
+            aria-current={currentSlide === index ? "true" : undefined}
             className={`h-[2px] transition-all duration-500 ${
               currentSlide === index
                 ? "w-10 bg-white"
