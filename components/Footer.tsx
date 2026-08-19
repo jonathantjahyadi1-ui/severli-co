@@ -54,7 +54,7 @@ export default function Footer() {
               href="/"
               className="font-serif text-2xl font-bold tracking-wide text-white"
             >
-              Severli.co
+              Severli
             </Link>
 
             <p className="mt-5 text-sm leading-7 text-white/50">
