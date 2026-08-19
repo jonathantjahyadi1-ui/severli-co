@@ -203,11 +203,102 @@ const products = [
   },
 ];
 
+const collectionSections = [
+  {
+    id: "shirts-blouses",
+    title: "Shirts & Blouses",
+    description:
+      "Refined shirts and blouses designed for polished everyday dressing.",
+    productNames: [
+      "Berna Shirt",
+      "Cala Shirt",
+      "Cassey Blouse",
+      "Elsa Shirt",
+      "Eve Blouse",
+      "Gea Shirt",
+      "Helen Blouse",
+      "Jola Shirt",
+      "Kai Shirt",
+      "Lara Shirt",
+      "Rai Crinkle",
+      "Rui Blouse",
+      "Nova Shirt",
+      "Sore Shirt",
+      "There Shirt",
+      "Venti Shirt",
+      "Wila Shirt",
+    ],
+  },
+  {
+    id: "tops-vests",
+    title: "Tops & Vests",
+    description:
+      "Versatile layers created to complement modern workwear and daily looks.",
+    productNames: [
+      "Emmy Vest",
+      "Joy Vest",
+      "Gia Knit Top",
+      "Luella Vest",
+      "Sofia Vest",
+    ],
+  },
+  {
+    id: "pants",
+    title: "Pants",
+    description:
+      "Comfortable, structured silhouettes made for work and everyday movement.",
+    productNames: [
+      "Althea Pants",
+      "Elaya Pants",
+      "Foxy Pants",
+      "Gina Culotte",
+      "Luisa Pants",
+      "Lune Pants",
+      "Mia Pants",
+      "Rua Pants",
+      "Yori Pants",
+    ],
+  },
+  {
+    id: "skirts",
+    title: "Skirts",
+    description:
+      "Feminine shapes balanced with practical details for effortless styling.",
+    productNames: ["Fuji Skirt"],
+  },
+  {
+    id: "dresses",
+    title: "Dresses",
+    description:
+      "Considered silhouettes for occasions, gatherings, and elevated daily wear.",
+    productNames: ["Rumi Dress", "Daisy Dress"],
+  },
+  {
+    id: "sets",
+    title: "Sets",
+    description:
+      "Coordinated pieces that create a complete and effortless look.",
+    productNames: ["Alika Set"],
+  },
+  {
+    id: "outerwear",
+    title: "Outerwear",
+    description:
+      "Structured blazers that bring clarity and confidence to every outfit.",
+    productNames: [
+      "Emma Blazer",
+      "Lyra Blazer",
+      "Serena Blazer",
+      "Zeline Blazer",
+    ],
+  },
+];
+
 export default function CollectionsPage() {
   return (
     <main className="min-h-screen severli-page-bg px-6 pb-24 pt-28 md:px-10 lg:px-16">
       <div className="mx-auto max-w-[1400px]">
-        {/* Kembali ke Home */}
+        {/* Back to homepage */}
         <Link
           href="/"
           className="mb-14 inline-flex items-center gap-2 text-[11px]
@@ -219,91 +310,152 @@ export default function CollectionsPage() {
         </Link>
 
         {/* Header */}
-        <header
-          className="mb-14 flex flex-col justify-between gap-7
-                     border-b border-black/10 pb-10
-                     md:flex-row md:items-end"
-        >
-          <div className="max-w-[720px]">
-            <p className="mb-3 text-[10px] font-semibold uppercase tracking-[0.3em] text-black/45">
-              Severli.co
-            </p>
-
-            <h1 className="font-serif text-4xl font-semibold leading-tight text-black md:text-5xl">
-              All Collections
-            </h1>
-
-            <p className="mt-5 max-w-[620px] text-sm leading-7 text-black/55">
-              Discover our complete collection of contemporary women&apos;s
-              fashion, designed for elegant, practical, and confident everyday
-              style.
-            </p>
-          </div>
-
-          <p className="text-xs uppercase tracking-[0.16em] text-black/45">
-            {products.length} Products
+        <header className="border-b border-black/10 pb-12 text-center md:pb-14">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-black/45">
+            Collections
           </p>
+
+          <h1 className="mt-4 font-serif text-4xl font-semibold leading-tight text-black md:text-5xl lg:text-6xl">
+            The Severli Collection
+          </h1>
+
+          <p className="mx-auto mt-5 max-w-[660px] text-sm leading-7 text-black/55">
+            Explore Severli&apos;s complete womenswear collection, organized by
+            category for a simpler way to discover every piece.
+          </p>
+
+          {/* Category navigation */}
+          <nav
+            aria-label="Collection categories"
+            className="mx-auto mt-9 flex max-w-[1000px] flex-wrap items-center justify-center gap-x-6 gap-y-4"
+          >
+            {collectionSections.map((section) => (
+              <a
+                key={section.id}
+                href={`#${section.id}`}
+                className="border-b border-transparent pb-1 text-[10px]
+                           font-semibold uppercase tracking-[0.17em]
+                           text-black/50 transition-colors duration-300
+                           hover:border-black hover:text-black"
+              >
+                {section.title}
+              </a>
+            ))}
+          </nav>
         </header>
 
-        {/* Daftar Produk */}
-        <section className="grid grid-cols-1 gap-x-5 gap-y-12 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {products.map((product, index) => (
-            <article key={product.name} className="group">
-              <a
-                href={product.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`Lihat produk ${product.name}`}
-                className="block"
+        {/* Products grouped by category */}
+        <div>
+          {collectionSections.map((section, sectionIndex) => {
+            const sectionProducts = section.productNames
+              .map((name) =>
+                products.find((product) => product.name === name),
+              )
+              .filter(
+                (product): product is (typeof products)[number] =>
+                  Boolean(product),
+              );
+
+            return (
+              <section
+                key={section.id}
+                id={section.id}
+                className="scroll-mt-24 border-b border-black/10 py-16
+                           last:border-b-0 md:py-20"
               >
-                <div className="relative aspect-[3/4] overflow-hidden bg-[#efefed]">
-                  <Image
-                    src={product.image}
-                    alt={`Koleksi ${product.name} dari Severli.co`}
-                    fill
-                    priority={index < 4}
-                    sizes="(max-width: 640px) 100vw,
-                           (max-width: 1024px) 50vw,
-                           (max-width: 1280px) 33vw,
-                           25vw"
-                    className="object-cover transition-transform duration-700
-                               ease-out group-hover:scale-[1.035]"
-                  />
+                {/* Section heading */}
+                <div className="mb-10 flex flex-col justify-between gap-5 md:flex-row md:items-end">
+                  <div className="max-w-[650px]">
+                    <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-black/40">
+                      {String(sectionIndex + 1).padStart(2, "0")} /{" "}
+                      {String(collectionSections.length).padStart(2, "0")}
+                    </p>
 
-                  <div
-                    className="absolute right-4 top-4 flex h-9 w-9
-                               translate-y-1 items-center justify-center
-                               rounded-full bg-white/90 opacity-0 shadow-sm
-                               backdrop-blur-sm transition-all duration-300
-                               group-hover:translate-y-0 group-hover:opacity-100"
-                  >
-                    <ArrowUpRight size={15} />
-                  </div>
-                </div>
-
-                <div className="pt-4">
-                  <p className="mb-1.5 text-[9px] font-medium uppercase tracking-[0.22em] text-black/40">
-                    Severli.co Collection
-                  </p>
-
-                  <div className="flex items-center justify-between gap-4">
-                    <h2
-                      className="text-sm font-semibold text-black
-                                 transition-opacity duration-300
-                                 group-hover:opacity-60"
-                    >
-                      {product.name}
+                    <h2 className="mt-3 font-serif text-3xl font-semibold leading-tight text-black md:text-4xl">
+                      {section.title}
                     </h2>
 
-                    <span className="text-[10px] uppercase tracking-[0.14em] text-black/40">
-                      View product
-                    </span>
+                    <p className="mt-4 max-w-[560px] text-sm leading-7 text-black/55">
+                      {section.description}
+                    </p>
                   </div>
+
+                  <p className="text-[10px] font-medium uppercase tracking-[0.16em] text-black/40">
+                    {sectionProducts.length}{" "}
+                    {sectionProducts.length === 1
+                      ? "Product"
+                      : "Products"}
+                  </p>
                 </div>
-              </a>
-            </article>
-          ))}
-        </section>
+
+                {/* Product grid */}
+                <div className="grid grid-cols-1 gap-x-5 gap-y-12 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                  {sectionProducts.map((product, productIndex) => (
+                    <article key={product.name} className="group">
+                      <a
+                        href={product.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`Lihat produk ${product.name}`}
+                        className="block"
+                      >
+                        <div className="relative aspect-[3/4] overflow-hidden bg-[#efefed]">
+                          <Image
+                            src={product.image}
+                            alt={`Koleksi ${product.name} dari Severli.co`}
+                            fill
+                            priority={
+                              sectionIndex === 0 && productIndex < 4
+                            }
+                            sizes="(max-width: 640px) 100vw,
+                                   (max-width: 1024px) 50vw,
+                                   (max-width: 1280px) 33vw,
+                                   25vw"
+                            className="object-cover transition-transform
+                                       duration-700 ease-out
+                                       group-hover:scale-[1.035]"
+                          />
+
+                          <div
+                            className="absolute right-4 top-4 flex h-9 w-9
+                                       translate-y-1 items-center justify-center
+                                       rounded-full bg-white/90 opacity-0
+                                       shadow-sm backdrop-blur-sm
+                                       transition-all duration-300
+                                       group-hover:translate-y-0
+                                       group-hover:opacity-100"
+                          >
+                            <ArrowUpRight size={15} />
+                          </div>
+                        </div>
+
+                        <div className="pt-4">
+                          <p className="mb-1.5 text-[9px] font-medium uppercase tracking-[0.22em] text-black/40">
+                            {section.title}
+                          </p>
+
+                          <div className="flex items-center justify-between gap-4">
+                            <h3
+                              className="text-sm font-semibold text-black
+                                         transition-opacity duration-300
+                                         group-hover:opacity-60"
+                            >
+                              {product.name}
+                            </h3>
+
+                            <span className="shrink-0 text-[10px] uppercase tracking-[0.14em] text-black/40">
+                              View product
+                            </span>
+                          </div>
+                        </div>
+                      </a>
+                    </article>
+                  ))}
+                </div>
+              </section>
+            );
+          })}
+        </div>
       </div>
     </main>
   );

@@ -24,18 +24,18 @@ export default function Hero() {
 
         <div className="flex w-full flex-col gap-3.5 sm:w-auto sm:flex-row">
           <Link
-            href="/collections"
+            href="/discover-severli"
             className="btn-primary flex w-full items-center justify-center gap-2 sm:w-auto"
           >
-            Explore Collections
+            Discover Severli
             <ArrowRight size={16} />
           </Link>
 
           <Link
-            href="/best-sellers"
+            href="/business-inquiries"
             className="btn-outline flex w-full items-center justify-center sm:w-auto"
           >
-            View Best Sellers
+            Bussines Inquires
           </Link>
         </div>
       </div>
