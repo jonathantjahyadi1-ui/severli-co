@@ -1,5 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import HeroSlider from "./HeroSlider";
 
 export default function Hero() {
@@ -10,18 +11,32 @@ export default function Hero() {
     >
       {/* Text Content */}
       <div className="z-10 flex w-full flex-col justify-center px-5 pb-12 pt-28 sm:px-8 lg:flex-1 lg:px-10 lg:py-20 lg:pl-16">
-        <p className="mb-2 text-sm italic text-brand-gray">
-          Severli.co
-        </p>
+        {/* Logo kecil */}
+        <div className="relative mb-4 h-[36px] w-[135px] sm:h-[40px] sm:w-[150px]">
+  <Image
+    src="/images/logo/severli-logo-black.webp"
+    alt="Severli.co"
+    fill
+    priority
+    sizes="(max-width: 640px) 135px, 150px"
+    className="object-contain object-left"
+  />
+</div>
 
+        {/* Heading */}
         <h1 className="mb-5 font-serif text-[38px] font-bold leading-[1.1] text-brand-black sm:text-[44px] lg:text-[48px] lg:leading-[1.15]">
-          <span className="block">Where Comfort Meets Confidence</span>
+          <span className="block">
+            Where Comfort Meets Confidence
+          </span>
         </h1>
 
+        {/* Description */}
         <p className="mb-8 max-w-[460px] text-[14px] leading-relaxed text-brand-mid-gray sm:text-[15px]">
-          An Indonesian womenswear brand creating thoughtfully designed pieces for work and everyday life.
+          An Indonesian womenswear brand creating thoughtfully designed pieces
+          for work and everyday life.
         </p>
 
+        {/* Buttons */}
         <div className="flex w-full flex-col gap-3.5 sm:w-auto sm:flex-row">
           <Link
             href="/discover-severli"
@@ -35,7 +50,7 @@ export default function Hero() {
             href="/business-inquiries"
             className="btn-outline flex w-full items-center justify-center sm:w-auto"
           >
-            Bussines Inquires
+            Business Inquiries
           </Link>
         </div>
       </div>
