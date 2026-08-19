@@ -19,9 +19,9 @@ const manrope = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Severli.co — Modern Korean Style for Everyday Women",
+  title: "Severli.co",
   description:
-    "Company profile Severli.co, a modern women's fashion brand based in Indonesia.",
+    "An Indonesian womenswear brand creating thoughtfully designed pieces for work and everyday life.",
 };
 
 export default function RootLayout({
