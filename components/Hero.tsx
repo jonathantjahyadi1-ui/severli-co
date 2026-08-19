@@ -15,13 +15,11 @@ export default function Hero() {
         </p>
 
         <h1 className="mb-5 font-serif text-[38px] font-bold leading-[1.1] text-brand-black sm:text-[44px] lg:text-[48px] lg:leading-[1.15]">
-          <span className="block">Modern Korean Style</span>
-          <span className="block">for Everyday Women</span>
+          <span className="block">Where Comfort Meets Confidence</span>
         </h1>
 
         <p className="mb-8 max-w-[460px] text-[14px] leading-relaxed text-brand-mid-gray sm:text-[15px]">
-          Severli.co creates elegant formal-casual fashion for women who value
-          confidence, comfort, and timeless everyday style.
+          An Indonesian womenswear brand creating thoughtfully designed pieces for work and everyday life.
         </p>
 
         <div className="flex w-full flex-col gap-3.5 sm:w-auto sm:flex-row">
