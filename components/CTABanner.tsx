@@ -19,17 +19,15 @@ export default function CTABanner() {
 
         <div className="mx-auto mt-8 h-px w-20 bg-white/20" />
 
-        <div className="mx-auto mt-8 max-w-3xl space-y-5 text-[15px] leading-8 text-white/65 sm:text-base sm:leading-8">
+        <div className="mx-auto mt-8 max-w-5xl space-y-6 text-[15px] leading-7 text-white/65 sm:text-[16px] sm:leading-8 lg:text-[16px]">
           <p>
             Severli evolves with the women we serve and the way they live
             today. We remain open to change, while being deliberate about what
-            we bring forward, allowing the brand to stay current without being
-            defined by every passing trend.
+            we bring forward, allowing the brand to stay current without being defined by every passing trend.
           </p>
 
           <p>
-            That balance shapes how Severli continues to build a clear and
-            recognizable point of view in modern womenswear.
+            That balance shapes how Severli continues to build a clear and recognizable point of view in modern womenswear.
           </p>
         </div>
       </div>

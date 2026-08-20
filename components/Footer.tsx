@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const quickLinks = [
   {
@@ -49,18 +50,22 @@ export default function Footer() {
       <div className="mx-auto max-w-[1600px]">
         <div className="grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-[1.35fr_0.85fr_1fr_0.95fr_1fr]">
           {/* Brand */}
-          <div>
-            <Link
-              href="/"
-              className="font-serif text-2xl font-bold tracking-wide text-white"
-            >
-              Severli
-            </Link>
+<div>
+  <Link href="/" className="inline-block">
+    <Image
+      src="/images/logo/severli-logo-black.webp"
+      alt="Severli"
+      width={140}
+      height={50}
+      className="h-auto w-[130px] brightness-0 invert"
+      priority
+    />
+  </Link>
 
-            <p className="mt-5 text-sm leading-7 text-white/50">
-              Jakarta, Indonesia
-            </p>
-          </div>
+  <p className="-mt-3 text-sm leading-7 text-white/50">
+    Jakarta, Indonesia
+  </p>
+</div>
 
           {/* Quick links */}
           <div>

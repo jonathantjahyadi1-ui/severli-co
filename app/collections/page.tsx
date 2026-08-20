@@ -319,9 +319,8 @@ export default function CollectionsPage() {
             The Severli Collection
           </h1>
 
-          <p className="mx-auto mt-5 max-w-[660px] text-sm leading-7 text-black/55">
-            Explore Severli&apos;s complete womenswear collection, organized by
-            category for a simpler way to discover every piece.
+          <p className="mx-auto mt-5 max-w-[950px] text-sm leading-7 text-black/55">
+            Explore Severli&apos;s complete womenswear collection, organized by category for a simpler way to discover every piece.
           </p>
 
           {/* Category navigation */}
@@ -334,9 +333,9 @@ export default function CollectionsPage() {
                 key={section.id}
                 href={`#${section.id}`}
                 className="border-b border-transparent pb-1 text-[10px]
-                           font-semibold uppercase tracking-[0.17em]
-                           text-black/50 transition-colors duration-300
-                           hover:border-black hover:text-black"
+                            font-bold uppercase tracking-[0.17em]
+                          text-black/80 transition-colors duration-300
+                          hover:border-black hover:text-black"
               >
                 {section.title}
               </a>
