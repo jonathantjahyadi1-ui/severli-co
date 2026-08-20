@@ -37,7 +37,7 @@ const products = [
     link: "https://shopee.co.id/Severli-Cassey-Crinkle-Blouse-Wanita-Korea-i.350242333.23672909253",
   },
   {
-    name: "Daisy Dress",
+    name: "Daisy Shirt",
     image: "/images/collections/DAISY.webp",
     link: "https://shopee.co.id/Severli-Premium-Daisy-Satin-Long-Sleeve-Dress-i.350242333.21381569267",
   },
@@ -227,6 +227,7 @@ const collectionSections = [
       "There Shirt",
       "Venti Shirt",
       "Wila Shirt",
+      "Daisy Shirt",
     ],
   },
   {
@@ -271,7 +272,7 @@ const collectionSections = [
     title: "Dresses",
     description:
       "Considered silhouettes for occasions, gatherings, and elevated daily wear.",
-    productNames: ["Rumi Dress", "Daisy Dress"],
+    productNames: ["Rumi Dress"],
   },
   {
     id: "sets",
