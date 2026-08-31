@@ -3,9 +3,12 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Our Journey | Severli.co",
+  title: "Our Journey | Severli",
   description:
     "Explore selected milestones from Severli’s journey since 2020.",
+  alternates: {
+    canonical: "/our-journey/",
+  },
 };
 
 const milestones = [

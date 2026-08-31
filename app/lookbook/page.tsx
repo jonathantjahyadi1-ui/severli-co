@@ -1,7 +1,17 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { lookbookImages } from "@/components/Lookbook";
+
+export const metadata: Metadata = {
+  title: "Lookbook | Severli",
+  description:
+    "Explore Severli styling inspiration for contemporary workwear and everyday dressing.",
+  alternates: {
+    canonical: "/lookbook/",
+  },
+};
 
 const galleryLayouts = [
   "md:col-span-7 md:row-span-7",

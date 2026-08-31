@@ -1,7 +1,17 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { bestSellerProducts } from "@/components/BestSellers";
+
+export const metadata: Metadata = {
+  title: "Best Sellers | Severli",
+  description:
+    "Explore the most-loved Severli womenswear pieces for work and everyday style.",
+  alternates: {
+    canonical: "/best-sellers/",
+  },
+};
 
 export default function BestSellersPage() {
   return (

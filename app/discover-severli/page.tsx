@@ -3,9 +3,12 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Discover Severli | Severli.co",
+  title: "Discover Severli | Severli",
   description:
     "Discover Severli, an Indonesian womenswear brand creating modern and versatile pieces for work and everyday life.",
+  alternates: {
+    canonical: "/discover-severli/",
+  },
 };
 
 const companyInformation = [

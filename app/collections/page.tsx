@@ -1,6 +1,16 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Collections | Severli",
+  description:
+    "Explore Severli womenswear collections, including shirts, blouses, pants, skirts, dresses, sets, vests, and outerwear.",
+  alternates: {
+    canonical: "/collections/",
+  },
+};
 
 const shopeeStore =
   "https://shopee.co.id/severli.co?entryPoint=ShopBySearch&searchKeyword=severli.co";

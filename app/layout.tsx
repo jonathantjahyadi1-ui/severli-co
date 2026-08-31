@@ -19,9 +19,39 @@ const manrope = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Severli.co",
+  metadataBase: new URL("https://severli.com"),
+  title: "Severli — Official Website",
   description:
-    "An Indonesian womenswear brand creating thoughtfully designed pieces for work and everyday life.",
+    "Severli is an Indonesian womenswear brand based in Jakarta, creating thoughtfully designed pieces for work and everyday life.",
+  applicationName: "Severli",
+  creator: "Severli",
+  publisher: "PT Thriva Grovia Bersama",
+  category: "Fashion",
+  openGraph: {
+    type: "website",
+    locale: "en_ID",
+    siteName: "Severli",
+    title: "Severli — Official Website",
+    description:
+      "An Indonesian womenswear brand creating thoughtfully designed pieces for work and everyday life.",
+  },
+  twitter: {
+    card: "summary",
+    title: "Severli — Official Website",
+    description:
+      "An Indonesian womenswear brand creating thoughtfully designed pieces for work and everyday life.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
 };
 
 export default function RootLayout({

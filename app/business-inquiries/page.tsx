@@ -10,9 +10,12 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Business Inquiries | Severli.co",
+  title: "Business Inquiries | Severli",
   description:
     "Contact Severli for partnerships, customer service, general inquiries, and business opportunities.",
+  alternates: {
+    canonical: "/business-inquiries/",
+  },
 };
 
 const contactDetails = [

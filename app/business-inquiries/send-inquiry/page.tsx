@@ -3,9 +3,12 @@ import Link from "next/link";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Send Inquiry | Severli.co",
+  title: "Send Inquiry | Severli",
   description:
     "Contact Severli regarding partnerships and commercial opportunities.",
+  alternates: {
+    canonical: "/business-inquiries/send-inquiry/",
+  },
 };
 
 const gmailUrl =
