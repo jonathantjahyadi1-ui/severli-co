@@ -28,7 +28,7 @@ const products = [
   },
   {
     name: "Gissele Blazer",
-    image: "/images/collections/Gissele.webp",
+    image: "/images/collections/Giselle.webp",
     link: "https://shopee.co.id/Severli-Giselle-Cropped-Blazer-Wanita-Blazer-Wanita-Korea-Blazer-Kerja-Kantor-Outer-Wanita-Casual-i.350242333.52768380636?extraParams=%7B%22display_model_id%22%3A376544022695%2C%22model_selection_logic%22%3A3%7D"
   },
   {
