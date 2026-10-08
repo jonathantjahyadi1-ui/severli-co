@@ -269,6 +269,7 @@ const collectionSections = [
     description:
       "Comfortable, structured silhouettes made for work and everyday movement.",
     productNames: [
+      "Lora Pants",
       "Althea Pants",
       "Elaya Pants",
       "Foxy Pants",
@@ -307,6 +308,7 @@ const collectionSections = [
     description:
       "Structured blazers that bring clarity and confidence to every outfit.",
     productNames: [
+      "Giselle Blazer",
       "Emma Blazer",
       "Lyra Blazer",
       "Serena Blazer",
