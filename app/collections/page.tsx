@@ -22,6 +22,16 @@ const products = [
     link: "https://shopee.co.id/SEVERLI-Alika-Set-2in1-Inner-Outer-Long-Top-Outer-Set-Lebaran-Long-Outer-Wanita-Premium-Tunik-Lebaran-Baju-Lebaran-2026-Severli-Raya-Collection-i.350242333.49905927020",
   },
   {
+    name: "Lora Pants",
+    image: "/images/collections/Lora.webp",
+    link: "https://shopee.co.id/Severli-LORA-Highwaist-Pants-Celana-Panjang-Wanita-Kerja-Ankle-Pants-Korean-Style-Formal-Casual-i.350242333.27102340840?extraParams=%7B%22display_model_id%22%3A316545035575%2C%22model_selection_logic%22%3A3%7D",
+  },
+  {
+    name: "Gissele Blazer",
+    image: "/images/collections/Gissele.webp",
+    link: "https://shopee.co.id/Severli-Giselle-Cropped-Blazer-Wanita-Blazer-Wanita-Korea-Blazer-Kerja-Kantor-Outer-Wanita-Casual-i.350242333.52768380636?extraParams=%7B%22display_model_id%22%3A376544022695%2C%22model_selection_logic%22%3A3%7D"
+  },
+  {
     name: "Rumi Dress",
     image: "/images/collections/RUMI.webp",
     link: shopeeStore,
